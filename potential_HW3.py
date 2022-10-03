@@ -3,22 +3,22 @@ import matplotlib.pyplot as plt
 import math
 
 
-N=1000
 q1=1  #charge +C
 q2=-1   # #charge -C
-x=10    # in cm
+x=10  # in cm
 y=0
+
 # permittivity of free space
 esp0=8.854e-12
 
 # define the constant without relative distance of charge
 # k=1/(4*math.pi*abs0) 
 def potential_V(q1,q2,x,y):
-    x1=np.sqrt((x+0.05)**2 + y**2)
-    y1=np.sqrt((x-0.05)**2 + y**2)
-    k1=1/(4*np.pi*esp0*x1)
-    k2=1/(4*np.pi*esp0*y1)
-    return (q1/(k1) + q2/(k2))
+    x1=np.sqrt((x+0.05)**2+y**2)
+    y1=np.sqrt((x-0.05)**2+y**2)
+    k1=(4*np.pi*esp0*x1)
+    k2=(4*np.pi*esp0*y1)
+    return (q1/(k1)+q2/(k2))
 
 ax1,ax2,Nx= -0.5,0.5,100
 by1,by2,Ny= ax1,ax2,Nx
@@ -33,6 +33,7 @@ for j in np.linspace(by1,by2,Ny):
     V.append(row)
 
 V_pot=np.array(V)
+print(V_pot)
 plt.imshow(V_pot)
 plt.title('test potential')
 plt.xlabel('x')
@@ -73,6 +74,7 @@ axes[0].set_title('Calculated Potential for +C and -C')
 axes[1].streamplot(X,Y,ex,ey)
 axes[1].set_title('Calcuted electric field')
 axes[0].set_xlabel('x (m)')
+axes[0].set_facecolor
 axes[1].set_xlabel('x (m)')
 axes[0].set_ylabel('y (m)')
 axes[1].set_ylabel('y (m)')
