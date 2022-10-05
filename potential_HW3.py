@@ -72,7 +72,7 @@ plt.subplots_adjust(hspace=0.2,wspace=0.5)
 axes[0].imshow(V_pot)
 axes[0].set_title('Calculated Potential for +C and -C')
 axes[1].streamplot(X,Y,ex,ey)
-axes[1].set_title('Calcuted electric field')
+axes[1].set_title('Calculated electric field')
 axes[0].set_xlabel('x (m)')
 axes[0].set_facecolor
 axes[1].set_xlabel('x (m)')
