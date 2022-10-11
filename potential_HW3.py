@@ -1,3 +1,5 @@
+from sqlite3 import Row
+from tkinter.tix import COLUMN
 import numpy as np
 import matplotlib.pyplot as plt
 import math
@@ -40,6 +42,7 @@ plt.xlabel('x')
 plt.ylabel('y')
 
 
+
 # def funcder(f,x,y): partial derivatives
 #     def partial_x(f, x, y):
 #         f(x+h/2,y)-f(x-h/2,y)
@@ -67,9 +70,9 @@ ex, ey=Par_diff(ax1,ax2,Nx)
 X, Y=np.meshgrid(np.linspace(ax1,ax2,Nx),np.linspace(by1, by2, Ny))
 
 # subplot for electric potential and field
-fig,axes=plt.subplots(nrows=1,ncols=2)
+fig,axes=plt.subplots(nrows=1,ncols=2,figsize=(10,5))
 plt.subplots_adjust(hspace=0.2,wspace=0.5)
-axes[0].imshow(V_pot)
+axes[0].pcolormesh(V_pot)
 axes[0].set_title('Calculated Potential for +C and -C')
 axes[1].streamplot(X,Y,ex,ey)
 axes[1].set_title('Calculated electric field')
