@@ -1,13 +1,15 @@
-from sqlite3 import Row
-from tkinter.tix import COLUMN
+
 import numpy as np
 import matplotlib.pyplot as plt
 import math
+"""
+Electric potential and Electric field for two charges
 
+"""
 
 q1=1  #charge +C
 q2=-1   # #charge -C
-x=10  # in cm
+x=0.01 # in cm
 y=0
 
 # permittivity of free space
