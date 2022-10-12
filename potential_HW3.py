@@ -38,7 +38,7 @@ for j in np.linspace(by1,by2,Ny):
 
 V_pot=np.array(V)
 print(V_pot)
-plt.imshow(V_pot)
+plt.imshow(V_pot,origin="lower",extent=[-0.5,0.5,-0.5,0.5])
 plt.title('test potential')
 plt.xlabel('x')
 plt.ylabel('y')
@@ -74,7 +74,7 @@ X, Y=np.meshgrid(np.linspace(ax1,ax2,Nx),np.linspace(by1, by2, Ny))
 # subplot for electric potential and field
 fig,axes=plt.subplots(nrows=1,ncols=2,figsize=(10,5))
 plt.subplots_adjust(hspace=0.2,wspace=0.5)
-axes[0].pcolormesh(V_pot)
+axes[0].imshow(V_pot,origin="lower",extent=[-0.5,0.5,-0.5,0.5])
 axes[0].set_title('Calculated Potential for +C and -C')
 axes[1].streamplot(X,Y,ex,ey)
 axes[1].set_title('Calculated electric field')
