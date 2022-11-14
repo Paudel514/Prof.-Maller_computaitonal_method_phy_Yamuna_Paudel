@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import animation
 
-np.random.seed(25)# number of random points
+np.random.normal(100)# number of random points
 
 def generateRandomLines(dt, N):
     dX = np.sqrt(dt) * np.random.randn(1, N)
@@ -22,8 +22,8 @@ def updateLines(num, dataLines, lines):
 
     return lines
 
-N = 100# Number of points
-T = 5.0
+N = 1000# Number of points
+T = 1.0
 dt = T/(N-1)
 
 
@@ -44,6 +44,6 @@ lines = [ax.plot(dat[0, 0:1], dat[1, 0:1])[0] for dat in data]
 ## Create the animation object
 anim = animation.FuncAnimation(fig, updateLines, N+1, fargs=(data, lines), 
 interval=20, repeat=True, blit=False)
-
+ax.scatter('x', 'y', s=90, marker=(5, 2))
 plt.tight_layout()
 plt.show()
