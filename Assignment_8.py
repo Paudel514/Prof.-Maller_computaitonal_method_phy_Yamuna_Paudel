@@ -53,7 +53,8 @@ result = cb_trajectory(1) # initial mass in kg
 # Plot the y values as a function of x
 fig, (ax1, ax2) = plt.subplots(nrows=2, figsize=(5, 6))
 ax1.plot(result[:, 0], result[:, 1], 'blue',linewidth=1.5)
-ax1.set(xlabel='x(m)',ylabel='y(m)')
+ax1.set(ylabel='y(m)')
+#ax1.set(xlabel='x(m)',ylabel='y(m)')
 # ax1.label_outer()
 print("The maximum horizontal distance travel by CannonBall:")
 print(result[658,0])
